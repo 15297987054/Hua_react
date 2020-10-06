@@ -1,0 +1,28 @@
+import React from 'react'
+import Header from './component/header'
+import GlobalContext from './globalContext'
+import One from './component/one'
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            n:10
+        }
+    }
+    render() {
+        return (
+            <GlobalContext.Provider
+                value={{
+                    username:'张三',
+                    age:19
+                }}
+            >
+               <Header/>
+                <One/>
+            </GlobalContext.Provider>
+        )
+    }
+
+}
+
+export default App

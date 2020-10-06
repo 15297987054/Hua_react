@@ -1,0 +1,29 @@
+#tabbar{
+    width:100%;
+    height: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding:8px 0;
+}
+#tabbar a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+#tabbar a i{
+    font-size: .5rem;
+}
+#tabbar a span{
+    font-size: .3rem;
+}
+#tabbar .active{
+    color:#c33;
+}
