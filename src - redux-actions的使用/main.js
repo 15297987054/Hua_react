@@ -148,7 +148,7 @@ import App from './App'
      *              2.引入 import PropTypes from 'prop-types'
      *              3.使用
      *                  组件.propTypes = {
-     *                      key:类型
+     *                      key:PropTypes.类型
      *                  }
      *      子传父
      *          当子组件在父组件中当标签使用的时候，给当前子组件绑定一个自定义属性，值为用来接收参数的函数，在子组件的内部，通过
