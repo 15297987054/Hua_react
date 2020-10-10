@@ -520,3 +520,8 @@ import App from './App'
           *            this.props.children:插槽作用域
           * 
           */
+         /**
+          * 装饰器
+          *     npm i --save-dev @babel/plugin-proposal-decorators react-app-rewired customize-cra react-scripts
+          *         @babel/plugin-syntax-jsx
+          */
