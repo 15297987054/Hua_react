@@ -1,0 +1,1 @@
+export const movieApi = ()=>fetch('/ajax/movieOnInfoList?token=&optimus_uuid=BCD56C20055311EBB3058BF48379091D0F24AD4F2EF94ABDB763BCEB801EB455&optimus_risk_level=71&optimus_code=10').then(res=>res.json())
