@@ -538,3 +538,44 @@ import App from './App'
           *            this.props.children:插槽作用域
           * 
           */
+         /**
+          * 装饰器
+          *  第一步：   npm i --save-dev @babel/plugin-proposal-decorators react-app-rewired customize-cra react-scripts
+          *         @babel/plugin-syntax-jsx
+          *  第二步：   将package.json中的
+          *     "scripts": {
+                    "start": "react-scripts start",
+                    "build": "react-scripts build",
+                    "test": "react-scripts test"
+                },
+          *     改为
+          *     "scripts": {
+                    "start": "react-app-rewired start",
+                    "build": "react-app-rewired build",
+                    "test": "react-app-rewired test"
+                },
+             第三步：   npm run eject
+             第四步：   将package.json中的
+                "babel": {
+                    "presets": [
+                    "react-app"
+                    ]
+                },
+                增加
+                "babel": {
+                    "plugins":[
+                        ["@babel/plugin-proposal-decorator",{"legacy":true}]
+                    ],
+                    "presets": [
+                    "react-app"
+                    ]
+                },
+          */
+
+          /**
+           *  mobx
+           *    npm i mobx mobx-react -D
+           *    observable:用来构建可被观察的对象
+           *    observer:关联React与mobx
+           *    action:用来定义修改mobx数据的方法
+           */
