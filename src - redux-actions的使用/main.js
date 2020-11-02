@@ -238,6 +238,48 @@ import App from './App'
       *             componentWillUpdate
       *             render
       *             componentDidUpdate
+      * 
+      * 1. React16废弃的生命周期有3个will：
+
+        componentWillMount
+
+        componentWillReceiveProps
+
+        componentWillUpdate
+
+        废弃的原因，是在React16的Fiber架构中，调和过程会多次执行will周期，不再是一次执行，失去了原有的意义。此外，多次执行，
+        在周期中如果有setState或dom操作，会触发多次重绘，影响性能，也会导致数据错乱
+
+        2. componentWillReceiveProps的执行时机
+
+        1. 在props变化时触发
+
+        2. 在父组件导致子组件rerender，即使props没有变化，也触发
+
+        componentWillReceiveProps本身是存在一些问题的。
+
+        3. React16的2个新的生命周期
+
+        getDerivedStateFromProps
+
+        getSnapshotBeforeUpdate
+
+        3.1 getDerivedStateFromProps的用法
+
+        这个周期很难用：
+
+        1. 触发时机频繁，16.3是在props变化时触发，16.4则改为在每次组件渲染器调用，
+        即无论props变化，组件自己setState，父组件render 都会触发
+
+        2. 静态方法，本意是隔离访问组件实例，却造成访问组件的数据和方法十分不便，难以进行数据比较
+
+        3. 不能setState，而是返回一个对象来更新state，使用不便，也可能触发多次更新状态
+
+        3.2 getSnapshotBeforeUpdate
+
+        在render之后，更新dom之前，state已更新。可以用来读取dom，强制用户只能在mount阶段读取dom。
+
+        getSnapshotBeforeUpdate这个周期在Fiber架构中，只会调用一次，实现了类似willMount的效果。
       */
      /**
       *     context 的基本使用以及什么时候会用到context？
