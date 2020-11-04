@@ -184,8 +184,14 @@ import App from './App'
       *         3.在当前生命周期中可以做插件的（比如echart图表）实例化
       * 
       *             关于refs
-      *                1.this.refs.属性
-      *                2.ref={(params)=>this.dom = params}
+      *             使用方式1：
+      *                1.ref={(params)=>this.dom = params}
+      *                2.this.refs.属性
+      *             使用方式2：
+      *                 1.在constructor中定义：this.dom = React.createRef()
+      *                 2.ref={this.dom}    
+      *                 3.this.refs.属性
+      *             注意：使用ref操作的是真实的dom而不是虚拟dom，这与react理念相违背，所以可以用，但是不推荐       
       *     componentWillUnmount:卸载
       *         当前生命周期可以用来做事件的解绑或者内存的释放
       *     componentWillReceiveProps:(会执行多次)
